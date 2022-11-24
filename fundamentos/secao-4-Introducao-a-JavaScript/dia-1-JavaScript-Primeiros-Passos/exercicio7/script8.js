@@ -36,5 +36,7 @@ if (grossSalary < 1556.95 && grossSalary - inssFirst < 1903.99) {
 } else if (grossSalary >= 5189.83) {
     netSalary = grossSalary - taxSeventh;
     console.log(netSalary);
+} else if (grossSalary < 0) {
+    console.log('Error');
 }
 
