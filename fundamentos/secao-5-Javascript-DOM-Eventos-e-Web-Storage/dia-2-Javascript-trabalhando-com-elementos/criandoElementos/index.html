@@ -1,0 +1,51 @@
+<main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    const irmao = document.createElement('section');
+    console.log(irmao);
+
+    irmao.setAttribute('id', 'novo-irmao');
+
+    document.getElementById('pai').appendChild(irmao);
+
+
+    const elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
+
+    const filhoOndeVoceEsta = document.createElement('section');
+
+
+    elementoOndeVoceEsta.appendChild(filhoOndeVoceEsta);
+
+    filhoOndeVoceEsta.id = 'novo-filho-onde';
+
+    console.log(filhoOndeVoceEsta);
+
+    const primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
+
+    filhoPrimeiroFilho = document.createElement('section');
+
+    primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilho);
+
+    filhoPrimeiroFilho.id = 'filho-primeiro';
+
+    console.log(filhoPrimeiroFilho);
+
+    const terceiroFilho = filhoPrimeiroFilho
+        .parentElement
+        .parentElement
+        .nextElementSibling;
+    console.log(terceiroFilho);
+
+    console.log(filhoPrimeiroFilho.parentElement.parentElement.nextElementSibling);
+  
+  </script>
