@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1>TrybeTrip</h1>
+  </header>
+  <main>
+    <form action="" method="get">
+      <section>
+        <div>
+          <label for="name">Nome:</label>
+          <input type="text" name="Nome" id="name" placeholder="Digite o seu nome completo">
+          <br>
+          <br>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" placeholder="Digite seu email">
+        </div>
+        <br>
+        <div>
+          <p>Destino preferido:</p>
+          <input type="radio" name="location" id="location1">
+          <label for="location1">Cidade</label>
+          <input type="radio" name="location" id="location2">
+          <label for="location2">Campo</label>
+          <input type="radio" name="location" id="location3">
+          <label for="location3">Praia</label>
+          <input type="radio" name="location" id="location4">
+          <label for="location4">Montanhas</label>
+        </div>
+        <br>
+        <div>
+          <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+          <textarea name="aboutme" id="about-me" cols="30" rows="10" placeholder="Espaço para digitar a resposta"></textarea>
+        </div>
+        <br>
+        <div>
+          <label for="date">Data:</label>
+          <input type="date" name="date" id="date">
+        </div>
+        <br>
+        <div>
+          <label for="agree1">Concordo com as regras da promoção</label>
+          <input type="checkbox" name="agree" id="agree1" required>
+          <br>
+          <label for="agree2">Concordo o uso de minhas imagens pela TrybeTrip</label>
+          <input type="checkbox" name="agree2" id="agree2" required>
+        </div>
+      </section>
+      <br>
+      <button type="submit" id="submit">Enviar</button>
+      <button type="reset">Apagar</button>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
