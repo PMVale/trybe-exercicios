@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario-TrybeTrip</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+  </head>
+  <body>
+    <h1>Concorra à Viagem dos seus sonhos com a TrybeTrip</h1>
+
+    <form>
+      <fieldset>
+        <label class="form-label" for="fullName">Nome Completo:</label>
+        <input class="form-control" type="text" id="fullName" name="fullName" placeholder="Digite seu nome completo" maxlength="40" minlength="10" required>      
+        <br/>
+
+        <label class="form-label" for="email">Endereço de e-mail:</label>
+        <input class="form-control" type="email" id="email" name="email" placeholder="Digite seu e-mail" maxlength="50" minlength="10" required>
+        <br/>
+
+        <label class="form-check-label" for="destination1">Cidade</label>
+        <input class="form-check-input" type="radio" id="destination1" className="radios" name="destinations" value="Cidade" required>
+
+        <label class="form-check-label" for="destination2">Campo</label>
+        <input class="form-check-input" type="radio" id="destination2" className="radios" name="destinations" value="Campo" required>
+
+        <label class="form-check-label" for="destination3">Praia</label>
+        <input class="form-check-input" type="radio" id="destination3" className="radios" name="destinations" value="Praia" required>
+
+        <label class="form-check-label" for="destination4">Montanhas</label>
+        <input class="form-check-input" type="radio" id="destination4" className="radios" name="destinations" value="Montanhas" required>
+        <br/>
+
+        <label class="form-label" for="why">Por que você deveria ser a pessoa desenvolvedora escolhida pelo concurso TrybeTrip?</label>
+        <br/>
+        <textarea class="form-control" name="why" id="why" cols="60" rows="10" placeholder="Digite sua resposta vencedora aqui"></textarea>
+        <br/>
+
+        <label class="form-label" for="date">Qual a melhor data para realizar sua viagem?</label>
+        <input class="form-control" type="text" id="date">
+        <br/>
+
+        <label class="form-check-label" for="promo">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe.</label>
+        <input class="form-check-input" type="checkbox" name="promo" id="promo">
+        <br/>
+
+        <label class="form-check-label" for="agreement">Concordo que imagens de minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+        <input class="form-check-input" type="checkbox" name="agreement" id="agreement" required>
+      </fieldset>
+
+      <button type="submit" id="submit-btn" class="btn btn-success" disabled>Participar do concurso TrybeTrip</button>
+      <button type="button" id="clear-btn" class="btn btn-danger">Apagar informações</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script>
+      let picker = new Pikaday({ 
+        field: document.getElementById('date'),
+        format: 'D/M/YYYY',
+        toString(date, format) {
+          const day = date.getDate();
+          const month = date.getMonth() + 1;
+          const year = date.getFullYear();
+          return `${day}/${month}/${year}`;
+        },
+        parse(dateString, format) {
+          const parts = dateString.split('/');
+          const day = parseInt(parts[0], 10);
+          const month = parseInt(parts[1], 10) - 1;
+          const year = parseInt(parts[2], 10);
+          return new Date(year, month, day);
+        } 
+      });
+    </script>
+  </body>
+</html>
