@@ -72,3 +72,50 @@ const verifyPair = (object, key, value) => {
 }
 
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+
+const studentCheck = (subject) => {
+  let totalStudents = 0;
+  if (allLessons.lesson1.materia.includes(subject)) {
+    totalStudents = totalStudents + allLessons.lesson1.numeroEstudantes
+  }
+  if (allLessons.lesson2.materia.includes(subject)) {
+    totalStudents = totalStudents + allLessons.lesson2.numeroEstudantes
+  }
+  if (allLessons.lesson3.materia.includes(subject)) {
+    totalStudents = totalStudents + allLessons.lesson3.numeroEstudantes
+  }
+  return console.log(totalStudents);
+}
+
+studentCheck('Matemática');
+studentCheck('História');
+
+const createReport = (data, teacher) => {
+  const newReport = {};
+  const aulas = [];
+  newReport.professor = '';
+  newReport.aulas = aulas;
+  newReport.estudantes = 0;
+  if (data.lesson1.professor.includes(teacher)) {
+    newReport.professor = data.lesson1.professor;
+    aulas.push(data.lesson1.materia);
+    newReport.aulas = aulas;
+    newReport.estudantes = newReport.estudantes + data.lesson1.numeroEstudantes;
+  }
+  if (data.lesson2.professor.includes(teacher)) {
+    newReport.professor = data.lesson2.professor;
+    aulas.push(data.lesson2.materia);
+    newReport.aulas = aulas;
+    newReport.estudantes = newReport.estudantes + data.lesson2.numeroEstudantes;
+  }
+  if (data.lesson3.professor.includes(teacher)) {
+    newReport.professor = data.lesson3.professor;
+    aulas.push(data.lesson3.materia);
+    newReport.aulas = aulas;
+    newReport.estudantes = newReport.estudantes + data.lesson3.numeroEstudantes;
+  }
+  return console.log(newReport);
+};
+
+createReport(allLessons, 'Maria Clara');
+createReport(allLessons, 'Carlos');
