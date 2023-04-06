@@ -9,7 +9,8 @@ export function fetchAPI() {
   return async (dispatch) => {
     try {
       dispatch(requestAPI());
-      const response = await fetch('https://aws.random.cat/meow');
+      // const response = await fetch('https://aws.random.cat/meow');
+      const response = await fetch('https://dog.ceo/api/breeds/image/random')
       const data = await response.json();
       console.log(data);
       return dispatch(getPicture(data));

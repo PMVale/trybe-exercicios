@@ -18,7 +18,7 @@ class Gallery extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  imgPath: state.imgURL.file,
+  imgPath: state.imgURL.message,
   isLoading: state.isLoading,
   useDefaultImg: state.defaultImg,
 });
