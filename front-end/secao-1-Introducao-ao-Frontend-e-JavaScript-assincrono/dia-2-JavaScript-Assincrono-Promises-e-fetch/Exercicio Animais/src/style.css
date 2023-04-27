@@ -1,0 +1,25 @@
+img {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-area {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.image-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}

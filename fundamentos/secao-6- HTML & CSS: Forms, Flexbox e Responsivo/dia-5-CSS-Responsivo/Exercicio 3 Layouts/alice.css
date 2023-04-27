@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media only screen and (max-width: 600px){
+  
+}
+
+@media only screen and (min-width: 768px){
+
+}
+
+@media only screen and (min-width: 992px){
+  body {
+    margin: 10px 50px;
+  }
+
+  p {
+    font-size: large;
+  }
+
+  header p {
+    font-size: xx-large;
+    text-align: center;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin:  0 17%;
+  }
+}
