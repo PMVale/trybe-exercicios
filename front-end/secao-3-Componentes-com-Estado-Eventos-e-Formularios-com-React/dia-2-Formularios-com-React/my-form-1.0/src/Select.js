@@ -5,8 +5,8 @@ class Select extends React.Component {
   render() {
     const { value, handleChange } = this.props;
     return (
-      <label>Escolha uma opção:
-        <select name='select' value={ value } onChange={handleChange} >
+      <label htmlFor='select'>Escolha uma opção:
+        <select name='select' value={ value } onChange={handleChange} id='select' >
           <option value={''}></option>
           <option value={'1'}>Opção 1</option>
           <option value={'2'}>Opção 2</option>

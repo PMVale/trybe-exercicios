@@ -65,16 +65,16 @@ class Form extends React.Component {
         <form>
           <fieldset>
             <legend>Coloque seus dados</legend>
-            <label>Coloque seu texto:
-              <textarea name='textArea' value={textArea} onChange={this.handleChange}></textarea>
+            <label htmlFor='textarea'>Coloque seu texto:
+              <textarea name='textArea' value={textArea} onChange={this.handleChange} id='textarea' />
             </label>
             <br />
             <Select value={select} handleChange={this.handleChange} />
             <br />
             <TextInput handleChange={this.handleChange} valueText={text} valueEmail={email} />
             <br />
-            <label>Selecione
-              <input name='checkbox' type={'checkbox'} value={checkbox} onChange={this.handleChange}></input>
+            <label htmlFor='checkbox'>Selecione
+              <input name='checkbox' type={'checkbox'} value={checkbox} id='checkbox' onChange={this.handleChange}></input>
             </label>
           </fieldset>
         </form>

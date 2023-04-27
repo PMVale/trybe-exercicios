@@ -7,8 +7,8 @@ class TextInput extends React.Component {
     const limitText = 25;
     return (
       <div>
-        <label>Coloque seu nome:
-          <input name='text' type={'text'} value={valueText} onChange={handleChange}></input>
+        <label htmlFor='text'>Coloque seu nome:
+          <input name='text' type={'text'} value={valueText} onChange={handleChange} id='text' />
           { !valueText ? 'O nome precisa ser preenchido' : ''}
           { valueText.length > limitText ? 'O nome não pode ter mais de 25 caracteres' : ''}
         </label>
