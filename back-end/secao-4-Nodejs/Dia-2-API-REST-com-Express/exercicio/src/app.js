@@ -26,6 +26,14 @@ app.get('/movies', async (req, res) => {
   res.status(200).json(movies);
 });
 
+app.get('/movies/search', async (req, res) => {
+  const movies = await readMovies();
+  const query = req.query.q;
+  const searchMovie = movies
+  .filter((item) => item.movie.toLowerCase().includes(query.toLowerCase()));
+  res.status(200).json(searchMovie);
+});
+
 app.get('/movies/:id', async (req, res) => {
   const movies = await readMovies();
   const { id } = req.params;
@@ -65,14 +73,6 @@ app.delete('/movies/:id', async (req, res) => {
   movies.splice(deleteIndex, 1);
   await fs.writeFile(moviesPath, JSON.stringify(movies));
   res.status(200).end();
-});
-
-app.get('/movies/search', async (req, res) => {
-  const movies = await readMovies();
-  const query = req.query.q;
-  const searchMovie = movies
-  .filter((item) => item.movie.toLowerCase().includes(query.toLowerCase()));
-  res.status(200).json(searchMovie);
 });
 
 module.exports = app;
